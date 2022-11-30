@@ -56,3 +56,21 @@ plus?.addEventListener("click", () => {
 minus?.addEventListener("click", () => {
   countStore.dispatch({ type: ACTION_TYPES.minus });
 });
+
+// ----------------------------------------
+
+const form = document.getElementById("form");
+const input = document.getElementById("input") as HTMLInputElement;
+const list = document.getElementById("list");
+
+const createTodo = (todo: string) => {
+  const item = document.createElement("li");
+  item.innerText = todo;
+  list?.appendChild(item);
+};
+
+form?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const todo = input.value;
+  createTodo(todo);
+});
