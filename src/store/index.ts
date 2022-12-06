@@ -79,7 +79,7 @@ const reactTodoSlice = createSlice({
 });
 
 // RTK의 configureStore로 대체
-const reactTodoStore = configureStore(reactTodoSlice);
+const reactTodoStore = configureStore({ reducer: reactTodoSlice.reducer });
 export const { add, remove } = reactTodoSlice.actions;
 // const reactTodoStore = createStore(reactTodoReducer);
 
